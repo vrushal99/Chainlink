@@ -1,0 +1,13 @@
+commands :-
+
+1) check bank host key
+ssh-keyscan -t rsa -p <port number> <URL>
+
+2) create own private and public key
+ssh-keygen -m PEM -t rsa
+
+3) generate p12 format certificate
+openssl pkcs12 -export -in <filename.txt> -out <filename.p12>
+
+4) generate PEM format certificate
+cat test.key publicKey.cer > digCert.pem

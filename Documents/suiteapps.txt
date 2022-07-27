@@ -1,0 +1,5 @@
+SuiteApps required :- 
+
+1) Auto Bank Statement Import
+2) SFTP Connector
+3) Bank Feeds

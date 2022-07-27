@@ -1,0 +1,83 @@
+REFERENCE FIELDS
+<refFields type="Barclays MT103">
+<refField id="custrecord_2663_acct_num" label="Account Number" helptext="Enter your company's Account Number."/>
+<refField id="custrecord_2663_iban" label="IBAN" helptext="Enter your company's International Bank Account Number (IBAN)."/>
+</refFields>
+---------------------
+ENTITY REFERENCE FIELDS
+<refFields type="Barclays MT103">
+<refField id="custrecord_2663_entity_bic" label="Swift Code/BIC/Routing No." mandatory="true" helptext="Enter the Business Identifier Code of the vendor's/employee's/customer's bank account."/>
+<refField id="custrecord_2663_entity_iban" label="IBAN" helptext="Enter the International Bank Account Number of the vendor's/employee's/customer's bank account."/>
+<refField id="custrecord_2663_entity_acct_no" label="Account Number" helptext="Enter the vendor's/employee's/customer's bank account number."/>
+<refField id="custrecord_details_of_charges" label="Charge Bearer Details" mandatory="true"/>
+<refField id="custrecord_2663_customer_code" label="Sort Code" />
+</refFields>
+----------------------
+FIELD VALIDATOR
+<fieldValidatorList>
+<fieldValidator>
+<fieldName>custrecord_2663_print_company_name</fieldName>
+<validatorList>
+<validator type="validChars">
+<param name="validChars">0-9A-Za-z&apos;:\,\- \(\+\.\)/</param>
+</validator>
+</validatorList>
+</fieldValidator>
+<fieldValidator>
+<fieldName>custrecord_2663_acct_num</fieldName>
+<validatorList>
+<validator type='len'>
+<param name="maxLength">34</param>
+</validator>
+<validator type="validChars">
+<param name="validChars">0-9A-Za-z&apos;:\,\- \(\+\.\)/</param>
+</validator>
+</validatorList>
+</fieldValidator>
+<fieldValidator>
+<fieldName>custrecord_2663_iban</fieldName>
+<validatorList>
+<validator type='len'>
+<param name="maxLength">34</param>
+</validator>
+<validator type='iban' />
+</validatorList>
+</fieldValidator>
+<fieldValidator>
+<fieldName>custrecord_2663_entity_bic</fieldName>
+<validatorList>
+<validator type="len">
+<param name="validLength">8|11</param>
+</validator>
+<validator type='bic' />
+</validatorList>
+</fieldValidator>
+<fieldValidator>
+<fieldName>custrecord_2663_entity_iban</fieldName>
+<validatorList>
+<validator type='len'>
+<param name="maxLength">34</param>
+</validator>
+<validator type='iban' />
+</validatorList>
+</fieldValidator>
+<fieldValidator>
+<fieldName>custrecord_2663_entity_acct_no</fieldName>
+<validatorList>
+<validator type='len'>
+<param name="maxLength">34</param>
+</validator>
+<validator type="validChars">
+<param name="validChars">0-9A-Za-z&apos;:\,\- \(\+\.\)/</param>
+</validator>
+</validatorList>
+</fieldValidator>
+<fieldValidator>
+<fieldName>custrecord_details_of_charges</fieldName>
+<validatorList>
+<validator type="validContent">
+<param name="validContent">BEN|OUR|SHA</param>
+</validator>
+</validatorList>
+</fieldValidator>
+</fieldValidatorList>
